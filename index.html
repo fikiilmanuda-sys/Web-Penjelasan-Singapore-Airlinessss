@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Airlines | Sejarah, Layanan & Jejak Penerbangan</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background: #f0f4f8;
+            color: #1e2b37;
+            line-height: 1.6;
+        }
+        /* navbar */
+        .navbar {
+            background: #13262f;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #f5b01b;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo i {
+            color: #f5b01b;
+            margin-right: 8px;
+        }
+        .nav-links a {
+            color: #ddd;
+            margin-left: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f5b01b;
+        }
+
+        /* credit banner (by FikkxSGP) */
+        .credit-banner {
+            background: #e9f0f5;
+            padding: 0.8rem 5%;
+            text-align: right;
+            font-weight: 600;
+            color: #1e4b5e;
+            border-bottom: 1px solid #cfdde9;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .credit-banner i {
+            color: #f5b01b;
+            margin-right: 8px;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(105deg, #002b3f 0%, #1e4b5e 100%);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero-text .tagline {
+            font-size: 1.3rem;
+            color: #f5b01b;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+        .hero-text p {
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #f5b01b;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+        .hero-img {
+            flex: 0 0 180px;
+            text-align: center;
+            font-size: 8rem;
+            color: #f5b01b;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* card style */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 45, 60, 0.1);
+            transition: 0.2s;
+            border-left: 6px solid #f5b01b;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e5eef5;
+            padding-bottom: 0.75rem;
+        }
+        .card-header i {
+            font-size: 2.2rem;
+            color: #1e4b5e;
+            background: #eaf0f5;
+            padding: 12px;
+            border-radius: 50%;
+        }
+        .card-header h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #002b3f;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .info-chip {
+            background: #eef4f9;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin: 0.25rem 0.25rem 0 0;
+            font-size: 0.9rem;
+        }
+        .info-chip i {
+            color: #f5b01b;
+            margin-right: 6px;
+        }
+        .timeline-item {
+            padding-left: 2rem;
+            border-left: 3px dashed #f5b01b;
+            margin-bottom: 1.8rem;
+        }
+        .timeline-year {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #002b3f;
+        }
+        .badge {
+            background: #002b3f;
+            color: white;
+            border-radius: 30px;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        th {
+            background: #002b3f;
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #cbdae5;
+        }
+        tr:hover {
+            background: #f4faff;
+        }
+
+        /* BUTTON STYLES */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background: #f5b01b;
+            color: #002b3f;
+        }
+        .btn-primary:hover {
+            background: #ffc342;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 176, 27, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #1e4b5e;
+            border-color: #1e4b5e;
+        }
+        .btn-outline:hover {
+            background: #1e4b5e;
+            color: white;
+        }
+        .btn-light {
+            background: white;
+            color: #002b3f;
+            border: 2px solid #f5b01b;
+        }
+        .btn-light:hover {
+            background: #f5b01b;
+            color: #002b3f;
+        }
+        .btn-large {
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        /* footer */
+        .footer {
+            background: #13262f;
+            color: #ccc;
+            padding: 2.5rem 5% 1.5rem;
+            text-align: center;
+            border-top: 5px solid #f5b01b;
+        }
+        .footer a {
+            color: #f5b01b;
+            text-decoration: none;
+        }
+        .signature {
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #f5b01b;
+            font-weight: 600;
+            color: #fff;
+            background: #0f2a33;
+            border-radius: 40px;
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .signature i {
+            color: #f5b01b;
+            margin-right: 10px;
+        }
+        .small-note {
+            font-size: 0.9rem;
+            color: #5f7d8c;
+            margin-top: 0.5rem;
+        }
+
+        /* floating back to top button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #f5b01b;
+            color: #002b3f;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            z-index: 1000;
+        }
+        #backToTop:hover {
+            background: #ffc342;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-plane"></i> Singapore Airlines</div>
+        <div class="nav-links">
+            <a href="#">Beranda</a>
+            <a href="#sejarah">Sejarah</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#fakta">Fakta</a>
+            <a href="#rute">Rute</a>
+        </div>
+    </nav>
+
+    <!-- credit banner by FikkxSGP -->
+    <div class="credit-banner">
+        <i class="fas fa-pen-fancy"></i> Web Penjelasan by FikkxSGP
+    </div>
+
+    <!-- hero section dengan tombol -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Singapore Airlines</h1>
+            <div class="tagline">Lebih dari 75 tahun melayang tinggi, melayani dunia</div>
+            <p>Maskapai penerbangan nasional Singapura yang telah memenangkan ribuan penghargaan berkat keunggulan layanan, keselamatan, dan inovasi. Bergabung dalam Star Alliance dan mengoperasikan salah satu armada termuda di dunia.</p>
+            <div class="btn-group">
+                <a href="#sejarah" class="btn btn-primary"><i class="fas fa-history"></i> Jelajahi Sejarah</a>
+                <a href="#layanan" class="btn btn-light"><i class="fas fa-star"></i> Lihat Layanan</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">156</span><div class="stat-label">Armada</div></div>
+                <div class="stat-item"><span class="stat-number">130+</span><div class="stat-label">Destinasi</div></div>
+                <div class="stat-item"><span class="stat-number">27 jt</span><div class="stat-label">Penumpang/thn</div></div>
+            </div>
+        </div>
+        <div class="hero-img">
+            <i class="fas fa-crown"></i>
+        </div>
+    </section>
+
+    <!-- main content container -->
+    <div class="container">
+
+        <!-- sejarah dengan tombol -->
+        <div class="card" id="sejarah">
+            <div class="card-header">
+                <i class="fas fa-timeline"></i>
+                <h2>Sejarah Panjang Penerbangan</h2>
+            </div>
+            <p><strong>Akar kuat sejak 1947:</strong> Berawal dari Malayan Airways yang menerbangi rute Singapura–Kuala Lumpur–Ipoh–Penang dengan pesawat twin-engined Airspeed Consul.</p>
+            <div class="timeline-item">
+                <div class="timeline-year">1963–1966</div>
+                <p>Berganti menjadi Malaysian Airways Ltd, lalu Malaysia-Singapore Airlines (MSA) setelah merger operasional.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1972</div>
+                <p>MSA resmi pecah menjadi dua entitas: <strong>Singapore Airlines</strong> dan Malaysian Airline System. Tanggal 28 Januari 1972, Singapore Airlines didirikan sebagai perseroan terbatas publik, sepenuhnya dimiliki oleh Temasek Holdings.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1987</div>
+                <p>Logo burung keris berwarna emas diperkenalkan oleh Landor Associates, menggantikan warna kuning. Menghabiskan biaya S$1 juta untuk penyegaran identitas.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2007</div>
+                <p>Menjadi <strong>maskapai pertama di dunia</strong> yang mengoperasikan Airbus A380.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <p>Meluncurkan kembali rute non-stop Singapore–New York (Newark) dengan Airbus A350-900ULR, penerbangan komersial terpanjang di dunia.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025–2026</div>
+                <p>Berkolaborasi dengan OpenAI untuk AI layanan pelanggan, meluncurkan rute baru ke Riyadh (Juni 2026), serta memperkuat jaringan Eropa melalui kemitraan dengan Lufthansa Group dan Brussels Airlines.</p>
+            </div>
+            <p class="small-note">*Newark diganti dengan New York-JFK pada 2020, namun warisan rute ultra panjang tetap dijalankan.</p>
+            <div class="btn-group">
+                <a href="https://www.singaporeair.com" target="_blank" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <!-- identitas & logo -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-paint-brush"></i>
+                <h2>Identitas Ikonik</h2>
+            </div>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div style="flex:1;">
+                    <h3>🪶 Logo Burung Keris</h3>
+                    <p>Simbol keris (belati tradisional) yang distilisasi menjadi burung melambangkan keanggunan, warisan, dan dinamika. Warna emas dipilih pada 1987 menggantikan kuning agar terlihat lebih premium.</p>
+                    <p><i class="fas fa-check-circle" style="color:#f5b01b;"></i> Sebelumnya arah logo tidak konsisten, Landor Associates membakukan orientasi dan proporsi.</p>
+                </div>
+                <div style="flex:1;">
+                    <h3>👘 Singapore Girl</h3>
+                    <p>Pramugari kebanggaan dengan sarong kebaya karya desainer Pierre Balmain (1968) dan masih dikenakan hingga sekarang. Mereka menjalani pelatihan intensif selama 3–4 bulan, tidak hanya soal pelayanan tetapi juga keamanan dan nuansa budaya.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- layanan unggulan dengan tombol -->
+        <div class="card" id="layanan">
+            <div class="card-header">
+                <i class="fas fa-champagne-glasses"></i>
+                <h2>Layanan Kelas Dunia</h2>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <h4><i class="fas fa-utensils" style="color:#f5b01b;"></i> Kuliner di Ketinggian</h4>
+                    <p>Makanan diuji dalam kabin bertekanan karena sensasi rasa berubah di atas 30.000 kaki. Bekerja sama dengan <em>International Culinary Panel</em> berisi koki selebriti dunia.</p>
+                    <h4 style="margin-top:1rem;"><i class="fas fa-tv"></i> KrisWorld</h4>
+                    <p>Sistem hiburan dengan lebih dari 1.900 pilihan film, serial, musik. Dilengkapi fitur <strong>myKrisWorld</strong> yang menyimpan progres di perangkat pribadi. Tersedia Wi-Fi gratis untuk anggota KrisFlyer di pesawat terpilih.</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-wine-bottle"></i> Pemenang Penghargaan</h4>
+                    <p>Kaboy terbaik dunia versi Skytrax berkali-kali. Ruang kelas Suite dan First Class dengan tempat tidur terpisah, serta <strong>Premium Economy</strong> dengan ruang kaki ekstra.</p>
+                    <h4 style="margin-top:1rem;"><i class="fas fa-baby"></i> Layanan Spesial</h4>
+                    <p>Tersedia hidangan khusus (religius, medis, anak) dengan pesan 24–56 jam sebelum penerbangan.</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary" onclick="alert('Fitur layanan premium akan segera hadir!')"><i class="fas fa-rocket"></i> Pesan Tiket (Simulasi)</a>
+            </div>
+        </div>
+
+        <!-- armada & keselamatan -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-shield-alt"></i>
+                <h2>Armada Muda & Keselamatan</h2>
+            </div>
+            <p><span class="badge">⭐ Rata-rata umur armada 6–7 tahun</span> — Salah satu yang termuda di industri, mendukung efisiensi dan keselamatan.</p>
+            <p><strong>Komposisi armada:</strong> Airbus A350, A380, Boeing 777-300ER, 787 Dreamliner, dan lainnya. Total 156 pesawat (2024).</p>
+            <p><strong>Keselamatan:</strong> Menempati peringkat kedua maskapai paling aman di dunia versi AirlineRatings (2025). Meski demikian, pada Mei 2024 penerbangan SQ321 mengalami turbulensi hebat di atas Myanmar, menyebabkan satu korban jiwa dan beberapa luka. Insiden ini menjadi pengingat bahwa turbulensi tetap risiko utama. Pasca kejadian, prosedur penanganan turbulensi diperketat, termasuk menghentikan layanan makan saat tanda sabuk menyala.</p>
+        </div>
+
+        <!-- fakta angka & jaringan -->
+        <div class="card" id="fakta">
+            <div class="card-header">
+                <i class="fas fa-chart-bar"></i>
+                <h2>Fakta & Angka (2025)</h2>
+            </div>
+            <table>
+                <tr><th>Atribut</th><th>Detail</th></tr>
+                <tr><td>Kode IATA / ICAO</td><td>SQ / SIA</td></tr>
+                <tr><td>Aliansi</td><td>Star Alliance (sejak 2000)</td></tr>
+                <tr><td>Perusahaan induk</td><td>Temasek Holdings</td></tr>
+                <tr><td>Jumlah karyawan</td><td>± 25.000</td></tr>
+                <tr><td>Penumpang tahunan</td><td>27 juta (pra-pandemi)</td></tr>
+                <tr><td>Destinasi</td><td>76–105 destinasi di 37–50 negara (termasuk anak perusahaan)</td></tr>
+                <tr><td>Anak perusahaan</td><td>Scoot, SilkAir, SIA Engineering, Singapore Flying College, dll.</td></tr>
+            </table>
+            <p class="small-note">*Beberapa angka bervariasi tergantung sumber, namun rute penumpang terus bertambah pasca pandemi.</p>
+        </div>
+
+        <!-- rute terbaru & perkembangan dengan tombol -->
+        <div class="card" id="rute">
+            <div class="card-header">
+                <i class="fas fa-route"></i>
+                <h2>Rute Terkini & Ekspansi 2026</h2>
+            </div>
+            <p><strong>Musim Panas 2026 (mulai 29 Maret):</strong></p>
+            <ul style="margin-left: 2rem;">
+                <li><i class="fas fa-plus-circle" style="color:green;"></i> <strong>Riyadh</strong> — 4 kali mingguan mulai Juni 2026, menggunakan A350-900 (40 kelas bisnis, 263 ekonomi).</li>
+                <li><i class="fas fa-arrow-up"></i> Bangkok menjadi 7 penerbangan harian.</li>
+                <li><i class="fas fa-arrow-up"></i> Yangon naik dari 7 jadi 10 mingguan.</li>
+                <li><i class="fas fa-arrow-up"></i> Surabaya 19 → 21 mingguan.</li>
+                <li><i class="fas fa-arrow-up"></i> Colombo naik 14 mingguan mulai Mei.</li>
+                <li><i class="fas fa-plane"></i> Dubai dilayani A380 sepanjang musim panas.</li>
+            </ul>
+            <p><strong>Rute Populer:</strong> Jakarta–Singapore (hingga 1.500 flights/bulan), Singapura–Tokyo, Kuala Lumpur–Singapura.</p>
+            <p><strong>Kemitraan codeshare:</strong> Lufthansa Group, Air New Zealand, Air France-KLM, dll.</p>
+            <div class="btn-group">
+                <a href="#rute" class="btn btn-outline" onclick="alert('Lihat jadwal penerbangan terkini di situs resmi.')"><i class="fas fa-calendar-alt"></i> Cek Jadwal</a>
+                <a href="https://www.singaporeair.com" target="_blank" class="btn btn-primary"><i class="fas fa-ticket-alt"></i>
